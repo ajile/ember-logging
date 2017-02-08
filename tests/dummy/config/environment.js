@@ -17,6 +17,18 @@ module.exports = function(environment) {
       }
     },
 
+    "ember-logging": {
+      loggers: {
+        "^.*$": {
+          "handlers": {
+            'console': ["debug", "info", "warn", "error", "critical"],
+            'backlog': ["debug", "info", "warn", "error", "critical"],
+            'sentry': ["debug", "info", "warn", "error", "critical"]
+          }
+        }
+      }
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
