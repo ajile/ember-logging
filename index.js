@@ -11,8 +11,8 @@ module.exports = {
     var path = process.cwd();
     var target = (parentAddon || app);
     var vendor = this.treePaths.vendor;
-    target.import(app.bowerDirectory + '/raven-js/dist/raven.js');
-    target.import(app.bowerDirectory + '/raven-js/dist/plugins/ember.js');
+    target.import(this.nodeModulesPath + '/raven-js/dist/raven.js');
+    target.import(this.nodeModulesPath + '/raven-js/dist/plugins/ember.js');
     app.import(vendor + '/shims/raven.js');
     return this._super.included(target);
   }

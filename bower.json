@@ -1,6 +1,4 @@
 {
   "name": "ember-logging",
-  "dependencies": {
-    "raven-js": "^3.9.1"
-  }
+  "dependencies": { }
 }

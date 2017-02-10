@@ -39,6 +39,10 @@ export function getLogger(options) {
  * @return {Object|Null}
  */
 export function getOptionsFor(loggerName) {
+  if (!Config["ember-logging"]) {
+    Ember.Logger.warn(`You should define configs for "ember-logging"`);
+    return false;
+  }
   for (let rule in Config["ember-logging"].loggers) {
     if ((new RegExp(rule)).test(loggerName)) {
       return Config["ember-logging"].loggers[rule];
@@ -113,7 +117,7 @@ class Logger extends Ember.Object {
    */
   log() {
     return this.debug(...arguments);
-  }  
+  }
 
   /**
    * The method gets info-level messages. The messages of this level helpful for
